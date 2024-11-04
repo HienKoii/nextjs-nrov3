@@ -30,7 +30,7 @@ export async function POST(request) {
     };
 
     // Gọi API bên thứ ba
-    const response = await axios.post("https://doithe.vn/chargingws/v2", payload, {
+    const response = await axios.post("https://trumthe.vn/chargingws/v2", payload, {
       headers: {
         "Content-Type": "application/json",
       },

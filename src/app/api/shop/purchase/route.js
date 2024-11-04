@@ -37,6 +37,11 @@ export async function POST(request) {
     itemsBoxLuckyRound.push(itemTemp);
     await connection.query("UPDATE player SET items_box_lucky_round = ? WHERE id = ?", [JSON.stringify(itemsBoxLuckyRound), playerId]);
 
+    // Lưu lịch sử giao dịch vào bảng history_gold
+    const sqlTaoLichSuMua = "INSERT INTO history_gold (name, gold, lydo) VALUES (?, ?, ?)";
+    const valuesTaoLichSuMua = [decoded.account.username, price, `${decoded.account.username} vừa mua ${name} trên web thành công !`];
+    await connection.query(sqlTaoLichSuMua, valuesTaoLichSuMua);
+
     await connection.commit();
     console.log(`${decoded.account.username} vừa mua ${name} thành công !`);
 

@@ -35,7 +35,7 @@ export default function NapTienHistory() {
                     {formatStatusCard(record.status)}
                   </Badge>
                 </td>
-                <td>{record.amount ? formatCurrencyVND(record.amount) : 0}</td>
+                <td>{record.amount ? formatCurrencyVND(record.value) : 0}</td>
                 <td>{formatCurrencyVND(record.declared_value)}</td>
                 <td>{record.telco}</td>
                 <td>{record.code}</td>

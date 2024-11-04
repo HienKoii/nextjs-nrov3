@@ -4,4 +4,4 @@ export const getPlayerInfoByAccountId = `
     LEFT JOIN head_avatar ha ON p.head = ha.head_id
     WHERE p.account_id = ?
   `;
-  export const updateMoneyAccountId = `UPDATE account SET vnd = vnd + ? WHERE id = ?`
+  export const updateMoneyAccountId = `UPDATE account SET vnd = vnd + ? , tongnap = tongnap + ? , naptuan = naptuan + ? WHERE id = ?`

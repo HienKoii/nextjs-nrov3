@@ -48,7 +48,7 @@ export async function GET(request) {
     // Nếu `status = 1`, cập nhật trường `vnd` trong bảng `account`
     const totalMoney = value * process.env.PROMO_RATE;
     if ((status === 1 || status === 2) && value) {
-      await connection.query(updateMoneyAccountId, [totalMoney, accountId]);
+      await connection.query(updateMoneyAccountId, [totalMoney,totalMoney, totalMoney, accountId]);
       console.log(`Tài khoản ${accountId} vừa nạp ${totalMoney} vnđ thành công !`);
     }
     return NextResponse.json({ success: true, message: "Record updated successfully" });

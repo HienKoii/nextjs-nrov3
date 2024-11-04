@@ -1,0 +1,172 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #b3afaf url(/imgs/backgr.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+body.swal2-shown.swal2-height-auto {
+  padding-right: 0 !important;
+}
+/* Ẩn thanh cuộn */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none !important;
+}
+p {
+  margin: 0 !important;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+/* custom hk */
+.hk-scrollbar.on {
+  max-height: 60vh;
+  overflow-y: scroll;
+}
+/* scrollbar width */
+.hk-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* scrollbar track */
+.hk-scrollbar::-webkit-scrollbar-track {
+  background: #eee;
+}
+
+/* scrollbar handle */
+.hk-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: #00d2ff;
+  background-image: linear-gradient(to top, #00d2ff 0%, #3a7bd5 100%);
+}
+
+.hk-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hk-flex-x {
+  display: flex;
+  align-items: center;
+}
+.hk-flex-y {
+  display: flex;
+  justify-content: center;
+}
+.hk-flex-col-y {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hk-flex-y-start {
+  display: flex;
+  justify-content: flex-start;
+}
+.hk-flex-y-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-wrap {
+  word-wrap: break-word; /* Giúp văn bản xuống dòng khi từ quá dài */
+  word-break: break-all; /* Tách từ dài thành các dòng */
+  overflow-wrap: break-word; /* Tương tự word-wrap */
+  white-space: normal; /* Cho phép xuống dòng */
+}
+.ellipsis-2 {
+  display: -webkit-box; /* Sử dụng flexbox */
+  -webkit-box-orient: vertical; /* Định hướng theo chiều dọc */
+  overflow: hidden; /* Ẩn phần văn bản thừa */
+  -webkit-line-clamp: 2; /* Giới hạn số dòng hiển thị là 2 */
+  line-height: 1.5; /* Chiều cao dòng */
+  max-height: 3em; /* Chiều cao tối đa cho 2 dòng */
+}
+/* class thư viện  */
+#tsparticles {
+  z-index: -1;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+}
+#tsparticles canvas {
+  background-color: transparent !important;
+}
+
+/* divider-text */
+.text-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider-line {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #6c757d;
+}
+
+.divider-text {
+  font-weight: bold;
+}
+
+/* custom btn */
+.btn-hk {
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 6px #999;
+}
+
+.btn-hk:active {
+  transform: translateY(4px);
+}
+
+/*  */
+.custom-dropdown-toggle .dropdown-toggle::after {
+  display: none;
+}
+/* class add */
+.loading-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

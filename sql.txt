@@ -1,0 +1,40 @@
+CREATE TABLE comments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    post_id INT NOT NULL,
+    account_id INT NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE,
+    FOREIGN KEY (account_id) REFERENCES account(id) ON DELETE CASCADE
+);
+
+CREATE TABLE napthe (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  account_id INT,
+  status INT,
+  amount INT,
+  value INT,
+  declared_value INT,
+  telco VARCHAR(50),
+  serial VARCHAR(50),
+  code VARCHAR(50),
+  message VARCHAR(255),
+  trans_id BIGINT,
+  request_id VARCHAR(50),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT fk_napthe_account_id FOREIGN KEY (account_id) REFERENCES account(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE web_shop (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  item_temp_id INT NOT NULL,
+  options JSON DEFAULT '[{"id":30,"param":1}]',
+  price INT NOT NULL,
+  quantity INT NOT NULL DEFAULT 1,
+  status TINYINT(1) DEFAULT 1,
+  is_hot TINYINT(1) DEFAULT 0,
+  is_new TINYINT(1) DEFAULT 0,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (item_temp_id) REFERENCES item_template(id)
+);
+

@@ -1,8 +1,9 @@
+import { CAU_HINH } from "@/config/setting";
 import { Image } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 
 export default function Slider() {
-  const slider = null;
+  const slider = CAU_HINH.slider;
   return (
     <Carousel>
       {slider?.map((item, index) => {

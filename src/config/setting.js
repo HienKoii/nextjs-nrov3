@@ -10,6 +10,7 @@ export const CAU_HINH = {
   },
   thongBao: {
     isThongBao: true,
+    text: "Chào mừng bạn đến với nro aro free all\n-Server test vĩnh viễn không rerest\n-cảm ơn bạn đã đọc thông báo\n-Chúc bạn chơi game vui vẻ",
   },
   urlImages: "https://icon.nroaro.xyz/",
   sizePage: 5,

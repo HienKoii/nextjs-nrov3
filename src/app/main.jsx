@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ToastContainer } from "react-toastify";
 
 import { BoxPage, ContainerMain } from "./styles/stylesGlobals";
@@ -16,8 +16,23 @@ import ParticleBackground from "@/components/effect/ParticleBackground";
 import { NapTheProvider } from "@/context/NapTheContext";
 import Floating from "@/components/floating";
 import { ShopProvider } from "@/context/ShopContext";
+import { CAU_HINH } from "@/config/setting";
+import Notification from "@/components/notification";
 
 export default function RootMain({ children }) {
+  const [showModal, setShowModal] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  useEffect(() => {
+    setIsMounted(true);
+    const hasVisited = localStorage.getItem("hasVisited");
+    if (!hasVisited) {
+      setShowModal(true);
+      localStorage.setItem("hasVisited", "true");
+    }
+  }, []);
+
   return (
     <>
       <ParticleBackground />
@@ -36,6 +51,7 @@ export default function RootMain({ children }) {
               </BoxPage>
               <Footer />
               <Floating />
+              {isMounted && CAU_HINH.thongBao.isThongBao && <Notification show={showModal} handleClose={handleClose} />}
             </PostsProvider>
           </ShopProvider>
         </AuthProvider>

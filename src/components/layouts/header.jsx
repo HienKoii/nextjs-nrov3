@@ -12,7 +12,7 @@ export default function Header() {
         <Image src="/imgs/12.png" alt="12+" width={12} height={12} className="mb-1" />
         Dành cho người chơi trên 12 tuổi. Chơi quá 180 phút mỗi ngày sẽ có hại sức khỏe.
       </div>
-      <Logo w={250} />
+      <Logo w={250} className={"w-100 hk-flex mt-4"} />
       <Divider />
       <Auth />
     </BoxPage>

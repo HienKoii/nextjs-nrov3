@@ -16,9 +16,7 @@ export default function Notification({ show, handleClose }) {
         <div dangerouslySetInnerHTML={{ __html: formatContent(CAU_HINH.thongBao.text) }} />
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          Đóng
-        </Button>
+        <Button onClick={handleClose}>Đóng</Button>
       </Modal.Footer>
     </Modal>
   );

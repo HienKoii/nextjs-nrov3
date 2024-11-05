@@ -14,5 +14,8 @@ export const PATH_NAME = {
   profile: "/profile",
   doiMatKhau: "/change-password",
   shop: "/shop-web",
-  admin: "/admin-panel",
+  admin: {
+    root: "/admin",
+    panel: "/admin/panel",
+  },
 };

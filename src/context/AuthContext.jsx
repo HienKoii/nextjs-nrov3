@@ -18,7 +18,8 @@ export const AuthProvider = ({ children }) => {
     Cookies.remove("token");
     setAccount(null);
     setPlayer(null);
-    router.push(PATH_NAME.login);
+    // router.push(PATH_NAME.login);
+    window.location.href = PATH_NAME.login;
   };
 
   const fetchAccount = async () => {

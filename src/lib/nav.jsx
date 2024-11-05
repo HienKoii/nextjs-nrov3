@@ -28,7 +28,7 @@ export const NAV_DROP_DOWN = [
     isAdmin: false,
   },
   {
-    path: PATH_NAME.admin,
+    path: PATH_NAME.admin.root,
     icon: <FontAwesomeIcon icon={faUserCog} />,
     name: "Admin control",
     isAdmin: true,

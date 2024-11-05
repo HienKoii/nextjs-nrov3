@@ -7,7 +7,7 @@ export function middleware(req) {
   const { pathname } = req.nextUrl; // Lấy đường dẫn từ req
 
   // Danh sách các trang yêu cầu  có token
-  const protectedRoutes = ["/profile", "/post/create", "/change-password"];
+  const protectedRoutes = ["/profile", "/post/create", "/change-password", "/admin"];
   // Danh sách các trang không cần token
   const publicRoutes = ["/login", "/register", "/forgot-password"];
 

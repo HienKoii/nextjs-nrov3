@@ -63,7 +63,8 @@ export default function LoginPage() {
         } else {
           toast.error("Bạn chưa tạo nhận vật !!!");
         }
-        router.push(PATH_NAME.home);
+        // router.push(PATH_NAME.home);
+        window.location.href = PATH_NAME.home;
       }
     } catch (error) {
       toast.error(error.response ? error.response.data.message : error.message);

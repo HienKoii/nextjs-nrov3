@@ -7,7 +7,11 @@ import { Spinner } from "react-bootstrap";
 export default function ShopWebPage() {
   const { fetchDataShop, shopData, loading } = useShop();
   useEffect(() => {
-    fetchDataShop();
+    try {
+      fetchDataShop();
+    } catch (error) {
+      console.log("Lỗi ShopWebPage");
+    }
   }, []);
 
   return (

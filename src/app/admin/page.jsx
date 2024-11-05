@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import { PATH_NAME } from "@/lib/path";
 import { Alert, Button, Container, Form, Nav, Tab, Tabs } from "react-bootstrap";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function AdminPage() {
   const token = Cookies.get("token");
@@ -12,8 +13,6 @@ export default function AdminPage() {
   const [amount, setAmount] = useState("");
   const [identifier, setIdentifier] = useState("");
   const [isUsername, setIsUsername] = useState(true); // Mặc định sử dụng `username`
-  const [message, setMessage] = useState(null);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     try {
@@ -27,8 +26,6 @@ export default function AdminPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage(null);
-    setError(null);
 
     try {
       const payload = { amount, identifier, isUsername };
@@ -37,10 +34,12 @@ export default function AdminPage() {
           Authorization: `Bearer ${token}`,
         },
       });
+      setAmount("");
+      setIdentifier("");
+      toast.success(response.data.message);
       console.log("xử lý cộng vnd", response);
-      setMessage(response.data.message);
     } catch (err) {
-      setError(err.response?.data?.message || "Đã xảy ra lỗi");
+      toast.error(err.response?.data?.message || "Đã xảy ra lỗi");
     }
   };
 
@@ -50,9 +49,6 @@ export default function AdminPage() {
         <Tab eventKey="vnd" title="Home">
           <Container>
             <h3 className="mt-4">Cộng tiền vào tài khoản</h3>
-            {message && <Alert variant="success">{message}</Alert>}
-            {error && <Alert variant="danger">{error}</Alert>}
-
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="amount" className="mb-3">
                 <Form.Label>Số tiền (VND)</Form.Label>

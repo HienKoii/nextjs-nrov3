@@ -44,6 +44,10 @@ export const LIST_NAVIGATION = [
     path: PATH_NAME.download,
   },
   {
+    text: "Cửa hàng",
+    path: PATH_NAME.shop,
+  },
+  {
     text: "GiftCode",
     path: PATH_NAME.giftCode,
   },

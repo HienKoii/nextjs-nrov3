@@ -159,6 +159,21 @@ ul {
 .btn-hk:active {
   transform: translateY(4px);
 }
+.blinking-text {
+  animation: blinking 2s infinite;
+}
+
+@keyframes blinking {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 /*  */
 .custom-dropdown-toggle .dropdown-toggle::after {

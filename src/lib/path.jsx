@@ -13,5 +13,6 @@ export const PATH_NAME = {
   giftCode: "/giftCode",
   profile: "/profile",
   doiMatKhau: "/change-password",
+  shop: "/shop-web",
   admin: "/admin-panel",
 };

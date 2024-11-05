@@ -43,7 +43,7 @@ export default function ShopItem({ item }) {
 
   return (
     <>
-      <Card>
+      <Card className="h-100">
         <div className="hk-flex gap-1 px-2 pt-2">
           <Image
             src={`${CAU_HINH.urlImages}${item.icon_id}.png`} //

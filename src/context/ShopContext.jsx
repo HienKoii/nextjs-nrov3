@@ -65,7 +65,7 @@ export const ShopProvider = ({ children }) => {
     }
   };
 
-  const values = { show, handleShow, handleClose, shopData, loading, loadingBtn, purchaseItem };
+  const values = { show, fetchDataShop, handleShow, handleClose, shopData, loading, loadingBtn, purchaseItem };
 
   return <ShopContext.Provider value={values}>{children}</ShopContext.Provider>;
 };

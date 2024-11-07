@@ -16,6 +16,11 @@ export default function ShopWebPage() {
 
   return (
     <div>
+      <div className="w-100 text-center text-dark my-2">
+        <strong>*Lưu ý: Thoát game trước khi mua vật phẩm tại đây!!!</strong>
+        <br />
+        <strong>Sau khi mua thành công hãy vào rương phụ trong game để nhận !</strong>
+      </div>
       {loading ? (
         <div className="hk-flex py-3">
           <Spinner animation="border" role="status">

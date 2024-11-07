@@ -43,7 +43,6 @@ export default function LoginPage() {
         title: "Thất bại",
         text: "Vui lòng nhập đủ dữ liệu  !!!",
         icon: "error",
-        timer: 2000,
       });
     }
 
@@ -64,7 +63,9 @@ export default function LoginPage() {
           toast.error("Bạn chưa tạo nhận vật !!!");
         }
         // router.push(PATH_NAME.home);
-        window.location.href = PATH_NAME.home;
+        setTimeout(() => {
+          window.location.href = PATH_NAME.home;
+        }, 1000);
       }
     } catch (error) {
       toast.error(error.response ? error.response.data.message : error.message);
